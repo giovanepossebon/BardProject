@@ -15,6 +15,7 @@ final class MasterSlideViewController: UIViewController {
     var suggestionsViewController: SuggestionsViewController!
     
     @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var suggestionsTrailingConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +34,29 @@ final class MasterSlideViewController: UIViewController {
     private func setupGestures() {
         let upGesture = UISwipeGestureRecognizer(target: self, action: #selector(showHistory))
         let downGesture = UISwipeGestureRecognizer(target: self, action: #selector(hideHistory))
-        upGesture.direction = UISwipeGestureRecognizerDirection.up
-        downGesture.direction = UISwipeGestureRecognizerDirection.down
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(showSuggestions))
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(hideSuggestions))
+        upGesture.direction = .up
+        downGesture.direction = .down
+        leftGesture.direction = .left
+        rightGesture.direction = .right
         view.addGestureRecognizer(upGesture)
         view.addGestureRecognizer(downGesture)
+        view.addGestureRecognizer(leftGesture)
+        view.addGestureRecognizer(rightGesture)
     }
-
 
     func shouldShowHistory(_ show: Bool) {
         slidesContainerBottomConstraint.constant = show ? 0.0 : 80.0
+        animateGestures()
+    }
 
+    func shouldShowSuggestions(_ show: Bool) {
+        suggestionsTrailingConstraint.constant = show ? 0.0 : 120.0
+        animateGestures()
+    }
+
+    func animateGestures() {
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
@@ -54,6 +68,14 @@ final class MasterSlideViewController: UIViewController {
 
     @objc func hideHistory() {
         shouldShowHistory(false)
+    }
+
+    @objc func showSuggestions() {
+        shouldShowSuggestions(true)
+    }
+
+    @objc func hideSuggestions() {
+        shouldShowSuggestions(false)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

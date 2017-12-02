@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-9f-4FT">
-                                <rect key="frame" x="0.0" y="768" width="904" height="80"/>
+                                <rect key="frame" x="0.0" y="768" width="1024" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="mKx-7m-1bO"/>
@@ -101,7 +101,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOg-bx-03i">
-                                <rect key="frame" x="904" y="64" width="120" height="704"/>
+                                <rect key="frame" x="1024" y="64" width="120" height="704"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="B00-bb-yPi"/>
@@ -116,7 +116,7 @@
                             <constraint firstItem="nh0-9f-4FT" firstAttribute="leading" secondItem="wRH-5a-taP" secondAttribute="leading" id="Bm9-u2-xex"/>
                             <constraint firstItem="wRH-5a-taP" firstAttribute="bottom" secondItem="sa8-sr-UPj" secondAttribute="bottom" id="PBE-bq-oli"/>
                             <constraint firstItem="sa8-sr-UPj" firstAttribute="leading" secondItem="wRH-5a-taP" secondAttribute="leading" id="Rqx-OC-QJt"/>
-                            <constraint firstItem="lOg-bx-03i" firstAttribute="trailing" secondItem="wRH-5a-taP" secondAttribute="trailing" id="Tnj-ee-bzj"/>
+                            <constraint firstItem="lOg-bx-03i" firstAttribute="trailing" secondItem="wRH-5a-taP" secondAttribute="trailing" constant="120" id="Tnj-ee-bzj"/>
                             <constraint firstItem="lOg-bx-03i" firstAttribute="top" secondItem="wRH-5a-taP" secondAttribute="top" id="Wq8-0D-Vv3"/>
                             <constraint firstItem="lOg-bx-03i" firstAttribute="bottom" secondItem="wRH-5a-taP" secondAttribute="bottom" id="hzb-k3-1Dj"/>
                             <constraint firstItem="sa8-sr-UPj" firstAttribute="top" secondItem="wRH-5a-taP" secondAttribute="top" id="otQ-SP-hXy"/>
@@ -129,6 +129,7 @@
                     <connections>
                         <outlet property="imgToShow" destination="sa8-sr-UPj" id="iP4-j0-lik"/>
                         <outlet property="slidesContainerBottomConstraint" destination="pee-bY-cAO" id="m4Q-kO-03S"/>
+                        <outlet property="suggestionsTrailingConstraint" destination="Tnj-ee-bzj" id="12W-n9-U7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8j-Fj-r5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,11 +166,11 @@
             <objects>
                 <viewController id="14T-aB-wAR" customClass="SlidesViewController" customModule="BardProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="knk-pe-JAU">
-                        <rect key="frame" x="0.0" y="0.0" width="904" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c8N-dp-MFP">
-                                <rect key="frame" x="0.0" y="0.0" width="904" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69762323943661975" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="6" minimumInteritemSpacing="6" id="Hhj-yO-z9o">
                                     <size key="itemSize" width="70" height="70"/>

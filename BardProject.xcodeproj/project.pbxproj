@@ -23,6 +23,7 @@
 		9FD956F51FD2E5EB0072535C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD956F41FD2E5EB0072535C /* CategoryCell.swift */; };
 		9FD956F71FD2E60B0072535C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD956F61FD2E60B0072535C /* CategoryCell.xib */; };
 		9FD956FA1FD2E7B20072535C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD956F91FD2E7B20072535C /* Category.swift */; };
+		BA472D111FD2F6B4007C77B4 /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D101FD2F6B4007C77B4 /* Bard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9FD956F41FD2E5EB0072535C /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		9FD956F61FD2E60B0072535C /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		9FD956F91FD2E7B20072535C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BA472D101FD2F6B4007C77B4 /* Bard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		9F9CED181FD2E0FE0028261C /* BardProject */ = {
 			isa = PBXGroup;
 			children = (
+				BA472D0F1FD2F6A8007C77B4 /* Speech */,
 				9F49A6941FD2F39E002080D7 /* Service */,
 				9F49A68F1FD2F2F1002080D7 /* API */,
 				9F49A68C1FD2F262002080D7 /* Network */,
@@ -180,6 +183,14 @@
 				9FD956F91FD2E7B20072535C /* Category.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BA472D0F1FD2F6A8007C77B4 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				BA472D101FD2F6B4007C77B4 /* Bard.swift */,
+			);
+			path = Speech;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 			files = (
 				9F9CED1C1FD2E0FE0028261C /* CategoryViewController.swift in Sources */,
 				9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */,
+				BA472D111FD2F6B4007C77B4 /* Bard.swift in Sources */,
 				9FD956F51FD2E5EB0072535C /* CategoryCell.swift in Sources */,
 				9F7AAA051FD2EB8E004845DD /* UIView+Extension.swift in Sources */,
 				9F49A6911FD2F307002080D7 /* CategoryService.swift in Sources */,

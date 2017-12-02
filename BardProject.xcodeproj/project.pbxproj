@@ -16,17 +16,22 @@
 		9F49A69B1FD31009002080D7 /* MediaContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A69A1FD31009002080D7 /* MediaContract.swift */; };
 		9F49A69D1FD311A3002080D7 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A69C1FD311A3002080D7 /* Media.swift */; };
 		9F49A69F1FD311E2002080D7 /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A69E1FD311E2002080D7 /* MediaService.swift */; };
-		9F7AAA051FD2EB8E004845DD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA041FD2EB8E004845DD /* UIView+Extension.swift */; };
+		9F49A6A11FD32CB9002080D7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A01FD32CB9002080D7 /* CategoryCell.swift */; };
+		9F49A6A31FD32CFF002080D7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A21FD32CFF002080D7 /* UIView+Extension.swift */; };
 		9F7AAA071FD2EDCD004845DD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */; };
 		9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED191FD2E0FE0028261C /* AppDelegate.swift */; };
 		9F9CED1C1FD2E0FE0028261C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED1B1FD2E0FE0028261C /* CategoryViewController.swift */; };
 		9F9CED1F1FD2E0FE0028261C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9CED1D1FD2E0FE0028261C /* Main.storyboard */; };
 		9F9CED211FD2E0FE0028261C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9CED201FD2E0FE0028261C /* Assets.xcassets */; };
 		9F9CED241FD2E0FE0028261C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9CED221FD2E0FE0028261C /* LaunchScreen.storyboard */; };
-		9FD956F51FD2E5EB0072535C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD956F41FD2E5EB0072535C /* CategoryCell.swift */; };
 		9FD956F71FD2E60B0072535C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD956F61FD2E60B0072535C /* CategoryCell.xib */; };
 		9FD956FA1FD2E7B20072535C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD956F91FD2E7B20072535C /* Category.swift */; };
-		BA472D111FD2F6B4007C77B4 /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D101FD2F6B4007C77B4 /* Bard.swift */; };
+		BA472D131FD31390007C77B4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D121FD31390007C77B4 /* UIImage+Extension.swift */; };
+		BA472D151FD31675007C77B4 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = BA472D141FD31674007C77B4 /* test.gif */; };
+		BA472D171FD3171D007C77B4 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D161FD3171D007C77B4 /* Segues.swift */; };
+		BA472D1A1FD3194F007C77B4 /* SlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D181FD3194F007C77B4 /* SlideCell.swift */; };
+		BA472D1B1FD3194F007C77B4 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA472D191FD3194F007C77B4 /* SlideCell.xib */; };
+		BA472D1D1FD31B7A007C77B4 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D1C1FD31B7A007C77B4 /* SlidesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +46,8 @@
 		9F49A69A1FD31009002080D7 /* MediaContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContract.swift; sourceTree = "<group>"; };
 		9F49A69C1FD311A3002080D7 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		9F49A69E1FD311E2002080D7 /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
-		9F7AAA041FD2EB8E004845DD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9F49A6A01FD32CB9002080D7 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		9F49A6A21FD32CFF002080D7 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		9F9CED161FD2E0FE0028261C /* BardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CED191FD2E0FE0028261C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,10 +56,15 @@
 		9F9CED201FD2E0FE0028261C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F9CED231FD2E0FE0028261C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F9CED251FD2E0FE0028261C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FD956F41FD2E5EB0072535C /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		9FD956F61FD2E60B0072535C /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		9FD956F91FD2E7B20072535C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BA472D101FD2F6B4007C77B4 /* Bard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bard.swift; sourceTree = "<group>"; };
+		BA472D121FD31390007C77B4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		BA472D141FD31674007C77B4 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
+		BA472D161FD3171D007C77B4 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		BA472D181FD3194F007C77B4 /* SlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCell.swift; sourceTree = "<group>"; };
+		BA472D191FD3194F007C77B4 /* SlideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
+		BA472D1C1FD31B7A007C77B4 /* SlidesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +134,9 @@
 		9F7AAA031FD2EB68004845DD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9F7AAA041FD2EB8E004845DD /* UIView+Extension.swift */,
+				9F49A6A21FD32CFF002080D7 /* UIView+Extension.swift */,
 				9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */,
+				BA472D121FD31390007C77B4 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,6 +173,7 @@
 				9F9CED191FD2E0FE0028261C /* AppDelegate.swift */,
 				9F9CED1D1FD2E0FE0028261C /* Main.storyboard */,
 				9F9CED201FD2E0FE0028261C /* Assets.xcassets */,
+				BA472D141FD31674007C77B4 /* test.gif */,
 				9F9CED221FD2E0FE0028261C /* LaunchScreen.storyboard */,
 				9F9CED251FD2E0FE0028261C /* Info.plist */,
 			);
@@ -170,8 +183,10 @@
 		9FD956F21FD2E5CF0072535C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA472D161FD3171D007C77B4 /* Segues.swift */,
 				9F9CED1B1FD2E0FE0028261C /* CategoryViewController.swift */,
 				9F49A6951FD2F68F002080D7 /* MasterSlideViewController.swift */,
+				BA472D1C1FD31B7A007C77B4 /* SlidesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,8 +194,10 @@
 		9FD956F31FD2E5D70072535C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9FD956F41FD2E5EB0072535C /* CategoryCell.swift */,
+				9F49A6A01FD32CB9002080D7 /* CategoryCell.swift */,
 				9FD956F61FD2E60B0072535C /* CategoryCell.xib */,
+				BA472D181FD3194F007C77B4 /* SlideCell.swift */,
+				BA472D191FD3194F007C77B4 /* SlideCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -265,8 +282,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F9CED241FD2E0FE0028261C /* LaunchScreen.storyboard in Resources */,
+				BA472D1B1FD3194F007C77B4 /* SlideCell.xib in Resources */,
 				9F9CED211FD2E0FE0028261C /* Assets.xcassets in Resources */,
 				9F9CED1F1FD2E0FE0028261C /* Main.storyboard in Resources */,
+				BA472D151FD31675007C77B4 /* test.gif in Resources */,
 				9FD956F71FD2E60B0072535C /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,16 +353,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F49A6A11FD32CB9002080D7 /* CategoryCell.swift in Sources */,
+				BA472D131FD31390007C77B4 /* UIImage+Extension.swift in Sources */,
 				9F9CED1C1FD2E0FE0028261C /* CategoryViewController.swift in Sources */,
 				9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */,
 				9F49A69D1FD311A3002080D7 /* Media.swift in Sources */,
-				BA472D111FD2F6B4007C77B4 /* Bard.swift in Sources */,
-				9FD956F51FD2E5EB0072535C /* CategoryCell.swift in Sources */,
-				9F7AAA051FD2EB8E004845DD /* UIView+Extension.swift in Sources */,
 				9F49A69F1FD311E2002080D7 /* MediaService.swift in Sources */,
+				BA472D171FD3171D007C77B4 /* Segues.swift in Sources */,
+				BA472D1A1FD3194F007C77B4 /* SlideCell.swift in Sources */,
+				BA472D1D1FD31B7A007C77B4 /* SlidesViewController.swift in Sources */,
 				9F49A6911FD2F307002080D7 /* CategoryService.swift in Sources */,
 				9FD956FA1FD2E7B20072535C /* Category.swift in Sources */,
 				9F49A6961FD2F68F002080D7 /* MasterSlideViewController.swift in Sources */,
+				9F49A6A31FD32CFF002080D7 /* UIView+Extension.swift in Sources */,
 				9F49A6931FD2F335002080D7 /* BardApi.swift in Sources */,
 				9F49A68E1FD2F28C002080D7 /* Network.swift in Sources */,
 				9F49A69B1FD31009002080D7 /* MediaContract.swift in Sources */,

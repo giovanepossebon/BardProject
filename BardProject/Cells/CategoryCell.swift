@@ -11,7 +11,7 @@ import AlamofireImage
 
 class CategoryCell: UICollectionViewCell {
 
-    static let identifier = "CategoryCell"
+    static let identifier = String(describing: CategoryCell.self)
 
     @IBOutlet weak var categoryImage: UIImageView! {
         didSet {
@@ -26,5 +26,4 @@ class CategoryCell: UICollectionViewCell {
         categoryImage.backgroundColor = .purple
         categoryImage.af_setImage(withURL: category.imageUrl)
     }
-
 }

@@ -90,13 +90,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sa8-sr-UPj">
                                 <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                             </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-9f-4FT">
+                                <rect key="frame" x="0.0" y="640" width="1024" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="mKx-7m-1bO"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="14T-aB-wAR" kind="embed" id="fQ3-eQ-agA"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nh0-9f-4FT" firstAttribute="leading" secondItem="wRH-5a-taP" secondAttribute="leading" id="Bm9-u2-xex"/>
                             <constraint firstItem="wRH-5a-taP" firstAttribute="bottom" secondItem="sa8-sr-UPj" secondAttribute="bottom" id="PBE-bq-oli"/>
                             <constraint firstItem="sa8-sr-UPj" firstAttribute="leading" secondItem="wRH-5a-taP" secondAttribute="leading" id="Rqx-OC-QJt"/>
+                            <constraint firstItem="wRH-5a-taP" firstAttribute="trailing" secondItem="nh0-9f-4FT" secondAttribute="trailing" id="S1I-oN-L2g"/>
                             <constraint firstItem="sa8-sr-UPj" firstAttribute="top" secondItem="wRH-5a-taP" secondAttribute="top" id="otQ-SP-hXy"/>
                             <constraint firstItem="wRH-5a-taP" firstAttribute="trailing" secondItem="sa8-sr-UPj" secondAttribute="trailing" id="pb1-J1-bJE"/>
+                            <constraint firstItem="nh0-9f-4FT" firstAttribute="bottom" secondItem="wRH-5a-taP" secondAttribute="bottom" id="pee-bY-cAO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wRH-5a-taP"/>
                     </view>
@@ -106,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8j-Fj-r5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853" y="34"/>
+            <point key="canvasLocation" x="852.5390625" y="33.59375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="onu-Ee-W6m">
@@ -132,6 +145,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVg-7q-wA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-534" y="34"/>
+        </scene>
+        <!--Slides View Controller-->
+        <scene sceneID="rPh-Mr-cdp">
+            <objects>
+                <viewController id="14T-aB-wAR" customClass="SlidesViewController" customModule="BardProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="knk-pe-JAU">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c8N-dp-MFP">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69762323943661975" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hhj-yO-z9o">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="4" minY="4" maxX="4" maxY="4"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WFr-xh-9XU">
+                                        <rect key="frame" x="4" y="4" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="14T-aB-wAR" id="g81-Pa-P5y"/>
+                                    <outlet property="delegate" destination="14T-aB-wAR" id="cfM-g7-BiY"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="c8N-dp-MFP" secondAttribute="trailing" id="1Qc-g5-1WY"/>
+                            <constraint firstItem="c8N-dp-MFP" firstAttribute="leading" secondItem="knk-pe-JAU" secondAttribute="leading" id="L9R-kW-amF"/>
+                            <constraint firstItem="c8N-dp-MFP" firstAttribute="top" secondItem="knk-pe-JAU" secondAttribute="top" id="NSM-70-q2Z"/>
+                            <constraint firstAttribute="bottom" secondItem="c8N-dp-MFP" secondAttribute="bottom" id="oOb-ee-dNH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="c8N-dp-MFP" id="nMd-2Z-RDP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjx-cy-kHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853" y="537"/>
         </scene>
     </scenes>
 </document>

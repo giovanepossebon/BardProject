@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
 
-    static let identifier = "CategoryCell"
+    static let identifier = String(describing: CategoryCell.self)
 
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryTitle: UILabel!
@@ -19,5 +19,4 @@ class CategoryCell: UICollectionViewCell {
         categoryTitle.text = category.title
         categoryImage.backgroundColor = .purple
     }
-
 }

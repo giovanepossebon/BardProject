@@ -82,12 +82,10 @@ final class MasterSlideViewController: UIViewController {
         if let slidesVC = segue.destination as? SlidesViewController {
             slidesViewController = slidesVC
             slidesVC.delegate = self
-            slidesVC.images = [#imageLiteral(resourceName: "tree1"), #imageLiteral(resourceName: "tree2"), #imageLiteral(resourceName: "tree3")]
         }
         if let suggestionsVC = segue.destination as? SuggestionsViewController {
             suggestionsViewController = suggestionsVC
             suggestionsVC.delegate = self
-            suggestionsVC.images = [#imageLiteral(resourceName: "tree1"), #imageLiteral(resourceName: "tree2"), #imageLiteral(resourceName: "tree3")]
         }
     }
 }

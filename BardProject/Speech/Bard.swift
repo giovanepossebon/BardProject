@@ -104,6 +104,25 @@ final class Bard: NSObject {
         speechTimer.invalidate()
         delegate?.didEndRecording()
     }
+
+    private func tokenizedSentence(_ sentence: String) -> String {
+        let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .joinNames]
+        let schemes = NSLinguisticTagger.availableTagSchemes(forLanguage: "en")
+        let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))
+        tagger.string = sentence
+
+        var expectedWords = ""
+        let range = NSMakeRange(0, question.count)
+        tagger.enumerateTags(in: range, scheme: .nameTypeOrLexicalClass, options: options) { (tag, tokenRange, _, _) in
+            guard let tag = tag else { return }
+            let token = (question as NSString).substring(with: tokenRange)
+            switch tag {
+                case .noun, .verb, .adjective: expectedWords += " \(token)"
+                default: break;
+            }
+        }
+        return expectedWords
+    }
 }
 
 extension Bard: SFSpeechRecognizerDelegate, SFSpeechRecognitionTaskDelegate {

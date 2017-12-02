@@ -42,4 +42,8 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
         return UICollectionViewCell()
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
+
 }

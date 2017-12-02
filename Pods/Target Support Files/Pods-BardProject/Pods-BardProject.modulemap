@@ -1,0 +1,6 @@
+framework module Pods_BardProject {
+  umbrella header "Pods-BardProject-umbrella.h"
+
+  export *
+  module * { export * }
+}

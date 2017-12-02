@@ -41,6 +41,12 @@ class CategoryViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? MasterSlideViewController {
+            // TODO: Send category information
+        }
+    }
+
 }
 
 extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -63,7 +69,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        performSegue(withIdentifier: Segue.toMasterViewController, sender: nil)
     }
 
 }

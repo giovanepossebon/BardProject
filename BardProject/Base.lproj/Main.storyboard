@@ -72,26 +72,41 @@
                     <navigationItem key="navigationItem" title="Home" id="Gsu-u7-AXl"/>
                     <connections>
                         <outlet property="collectionView" destination="4ic-pQ-XLP" id="jj3-bb-zAM"/>
+                        <segue destination="LX9-MF-PFo" kind="show" identifier="segueToMasterViewController" id="QXc-az-HS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="157.03125" y="33.59375"/>
         </scene>
-        <!--View Controller-->
+        <!--Master Slide View Controller-->
         <scene sceneID="M2G-5j-ghQ">
             <objects>
-                <viewController id="LX9-MF-PFo" sceneMemberID="viewController">
+                <viewController id="LX9-MF-PFo" customClass="MasterSlideViewController" customModule="BardProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="axj-19-znA">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sa8-sr-UPj">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wRH-5a-taP" firstAttribute="bottom" secondItem="sa8-sr-UPj" secondAttribute="bottom" id="PBE-bq-oli"/>
+                            <constraint firstItem="sa8-sr-UPj" firstAttribute="leading" secondItem="wRH-5a-taP" secondAttribute="leading" id="Rqx-OC-QJt"/>
+                            <constraint firstItem="sa8-sr-UPj" firstAttribute="top" secondItem="wRH-5a-taP" secondAttribute="top" id="otQ-SP-hXy"/>
+                            <constraint firstItem="wRH-5a-taP" firstAttribute="trailing" secondItem="sa8-sr-UPj" secondAttribute="trailing" id="pb1-J1-bJE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wRH-5a-taP"/>
                     </view>
+                    <connections>
+                        <outlet property="imgToShow" destination="sa8-sr-UPj" id="iP4-j0-lik"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8j-Fj-r5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="34"/>
+            <point key="canvasLocation" x="853" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="onu-Ee-W6m">

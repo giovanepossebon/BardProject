@@ -14,7 +14,7 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var buttonRecord: UIButton!
 
     var slidesViewController: SlidesViewController!
-    let bard = Bard(with: 4.0, languageIdentifier: "pt_BR")
+    let bard = Bard(with: 2.0, languageIdentifier: "pt_BR")
 
     var suggestionsViewController: SuggestionsViewController!
     
@@ -39,14 +39,16 @@ final class MasterSlideViewController: UIViewController {
             switch response.result {
             case .success:
                 guard let media = response.data, let img = media.artefacts.first else { return }
-                self.imgToShow.af_setImage(withURL: img)
+                self.imgToShow.af_setImage(withURL: img, completion: { [weak self] _ in
+                    self?.startBardRecording()
+                })
             case .error(message: let error):
                 print(error)
             }
         }
     }
 
-    @objc private func startBardRecording() {
+    private func startBardRecording() {
         bard.startRecognition()
     }
 
@@ -59,10 +61,7 @@ final class MasterSlideViewController: UIViewController {
         downGesture.direction = .down
         leftGesture.direction = .left
         rightGesture.direction = .right
-        view.addGestureRecognizer(upGesture)
-        view.addGestureRecognizer(downGesture)
-        view.addGestureRecognizer(leftGesture)
-        view.addGestureRecognizer(rightGesture)
+        view.gestureRecognizers = [upGesture, downGesture, leftGesture, rightGesture]
     }
 
     func shouldShowHistory(_ show: Bool) {
@@ -108,7 +107,11 @@ final class MasterSlideViewController: UIViewController {
         }
     }
     @IBAction func didTouchToggleRecording(_ sender: Any) {
-        startBardRecording()
+        if bard.isListening {
+            bard.stopRecognition()
+        } else {
+            startBardRecording()
+        }
     }
 }
 
@@ -132,8 +135,12 @@ extension MasterSlideViewController: BardDelegate {
         buttonRecord.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
     }
 
-    func didEndRecording() {
+    func didPauseRecording() {
+        print("Paused")
+    }
 
+    func didEndRecording() {
+        buttonRecord.setImage(#imageLiteral(resourceName: "record-button"), for: .normal)
     }
 }
 

@@ -15,9 +15,12 @@ protocol BardDelegate: class {
     func recognizedSpeech(text: String)
     func didStartRecording()
     func didEndRecording()
+    func didPauseRecording()
 }
 
 final class Bard: NSObject {
+
+    var isListening: Bool = false
 
     weak var delegate: BardDelegate?
     private var speechInterval: TimeInterval = 2
@@ -53,8 +56,7 @@ final class Bard: NSObject {
     }
 
     func startRecognition() {
-        guard !audioEngine.isRunning else { return }
-
+        isListening = true
         SFSpeechRecognizer.requestAuthorization { authStatus in
             OperationQueue.main.addOperation {
                 switch authStatus {
@@ -66,6 +68,10 @@ final class Bard: NSObject {
             }
         }
         try? startRecording()
+    }
+
+    func stopRecognition() {
+        stopRecording()
     }
 
     func startRecording() throws {
@@ -92,16 +98,26 @@ final class Bard: NSObject {
     @objc private func stillTalkingCheck() {
         let currentDate = Date()
         let secondsOfSilence = currentDate.timeIntervalSince(lastRecognizedDate)
-        if (secondsOfSilence > TimeInterval(speechInterval)) {
-            stopRecording()
+        if (secondsOfSilence > TimeInterval(speechInterval) && candidateText != "") {
             delegate?.didFinishStorytelling(text: candidateText)
+            candidateText = ""
+            pauseRecording()
         }
     }
 
-    private func stopRecording() {
-        audioEngine.stop()
+    private func pauseRecording() {
         request.endAudio()
         speechTimer.invalidate()
+        recognitionTask?.cancel()
+        delegate?.didPauseRecording()
+    }
+
+    private func stopRecording() {
+        isListening = false
+        audioEngine.stop()
+        speechTimer.invalidate()
+        request.endAudio()
+        recognitionTask?.cancel()
         delegate?.didEndRecording()
     }
 }

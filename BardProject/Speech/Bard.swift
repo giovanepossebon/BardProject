@@ -128,10 +128,10 @@ final class Bard: NSObject {
         tagger.string = sentence
 
         var expectedWords = ""
-        let range = NSMakeRange(0, question.count)
+        let range = NSMakeRange(0, sentence.count)
         tagger.enumerateTags(in: range, scheme: .nameTypeOrLexicalClass, options: options) { (tag, tokenRange, _, _) in
             guard let tag = tag else { return }
-            let token = (question as NSString).substring(with: tokenRange)
+            let token = (sentence as NSString).substring(with: tokenRange)
             switch tag {
                 case .noun, .verb, .adjective: expectedWords += " \(token)"
                 default: break;

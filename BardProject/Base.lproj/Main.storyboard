@@ -89,6 +89,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sa8-sr-UPj">
                                 <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-9f-4FT">
                                 <rect key="frame" x="0.0" y="688" width="1024" height="80"/>
@@ -100,6 +101,17 @@
                                     <segue destination="14T-aB-wAR" kind="embed" id="fQ3-eQ-agA"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9g-bA-1xK">
+                                <rect key="frame" x="20" y="86" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="8nH-jI-tXH"/>
+                                    <constraint firstAttribute="width" constant="36" id="Y8g-8K-i6y"/>
+                                </constraints>
+                                <state key="normal" image="record-button"/>
+                                <connections>
+                                    <action selector="didTouchToggleRecording:" destination="LX9-MF-PFo" eventType="touchUpInside" id="eWR-qr-GJT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -107,6 +119,8 @@
                             <constraint firstItem="wRH-5a-taP" firstAttribute="bottom" secondItem="sa8-sr-UPj" secondAttribute="bottom" id="PBE-bq-oli"/>
                             <constraint firstItem="sa8-sr-UPj" firstAttribute="leading" secondItem="wRH-5a-taP" secondAttribute="leading" id="Rqx-OC-QJt"/>
                             <constraint firstItem="wRH-5a-taP" firstAttribute="trailing" secondItem="nh0-9f-4FT" secondAttribute="trailing" id="S1I-oN-L2g"/>
+                            <constraint firstItem="u9g-bA-1xK" firstAttribute="leading" secondItem="wRH-5a-taP" secondAttribute="leading" constant="20" id="eFv-xo-wd7"/>
+                            <constraint firstItem="u9g-bA-1xK" firstAttribute="top" secondItem="wRH-5a-taP" secondAttribute="top" constant="22" id="elF-u8-hKG"/>
                             <constraint firstItem="sa8-sr-UPj" firstAttribute="top" secondItem="wRH-5a-taP" secondAttribute="top" id="otQ-SP-hXy"/>
                             <constraint firstItem="wRH-5a-taP" firstAttribute="trailing" secondItem="sa8-sr-UPj" secondAttribute="trailing" id="pb1-J1-bJE"/>
                             <constraint firstItem="nh0-9f-4FT" firstAttribute="bottom" secondItem="wRH-5a-taP" secondAttribute="bottom" id="pee-bY-cAO"/>
@@ -114,6 +128,7 @@
                         <viewLayoutGuide key="safeArea" id="wRH-5a-taP"/>
                     </view>
                     <connections>
+                        <outlet property="buttonRecord" destination="u9g-bA-1xK" id="x3d-7t-dv2"/>
                         <outlet property="imgToShow" destination="sa8-sr-UPj" id="iP4-j0-lik"/>
                     </connections>
                 </viewController>
@@ -197,4 +212,7 @@
             <point key="canvasLocation" x="853" y="537"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="record-button" width="36" height="36"/>
+    </resources>
 </document>

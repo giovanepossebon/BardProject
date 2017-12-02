@@ -11,9 +11,11 @@ import Foundation
 struct Media: Codable {
     let artefacts: [URL]
     let animated: Bool
+    let sound: [String]
 
     enum CodingKeys: String, CodingKey {
         case artefacts = "Artefact"
         case animated = "Animated"
+        case sound = "Sound"
     }
 }

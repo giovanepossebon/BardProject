@@ -53,6 +53,8 @@ final class Bard: NSObject {
     }
 
     func startRecognition() {
+        guard !audioEngine.isRunning else { return }
+
         SFSpeechRecognizer.requestAuthorization { authStatus in
             OperationQueue.main.addOperation {
                 switch authStatus {

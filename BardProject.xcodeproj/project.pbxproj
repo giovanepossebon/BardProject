@@ -18,6 +18,7 @@
 		9F49A69F1FD311E2002080D7 /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A69E1FD311E2002080D7 /* MediaService.swift */; };
 		9F49A6A11FD32CB9002080D7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A01FD32CB9002080D7 /* CategoryCell.swift */; };
 		9F49A6A31FD32CFF002080D7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A21FD32CFF002080D7 /* UIView+Extension.swift */; };
+		9F49A6A51FD32F6B002080D7 /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A41FD32F6B002080D7 /* Bard.swift */; };
 		9F7AAA071FD2EDCD004845DD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */; };
 		9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED191FD2E0FE0028261C /* AppDelegate.swift */; };
 		9F9CED1C1FD2E0FE0028261C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED1B1FD2E0FE0028261C /* CategoryViewController.swift */; };
@@ -48,6 +49,7 @@
 		9F49A69E1FD311E2002080D7 /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
 		9F49A6A01FD32CB9002080D7 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		9F49A6A21FD32CFF002080D7 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9F49A6A41FD32F6B002080D7 /* Bard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bard.swift; sourceTree = "<group>"; };
 		9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		9F9CED161FD2E0FE0028261C /* BardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CED191FD2E0FE0028261C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 		9F9CED251FD2E0FE0028261C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FD956F61FD2E60B0072535C /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		9FD956F91FD2E7B20072535C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		BA472D101FD2F6B4007C77B4 /* Bard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bard.swift; sourceTree = "<group>"; };
 		BA472D121FD31390007C77B4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BA472D141FD31674007C77B4 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
 		BA472D161FD3171D007C77B4 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
@@ -214,7 +215,7 @@
 		BA472D0F1FD2F6A8007C77B4 /* Speech */ = {
 			isa = PBXGroup;
 			children = (
-				BA472D101FD2F6B4007C77B4 /* Bard.swift */,
+				9F49A6A41FD32F6B002080D7 /* Bard.swift */,
 			);
 			path = Speech;
 			sourceTree = "<group>";
@@ -362,6 +363,7 @@
 				BA472D171FD3171D007C77B4 /* Segues.swift in Sources */,
 				BA472D1A1FD3194F007C77B4 /* SlideCell.swift in Sources */,
 				BA472D1D1FD31B7A007C77B4 /* SlidesViewController.swift in Sources */,
+				9F49A6A51FD32F6B002080D7 /* Bard.swift in Sources */,
 				9F49A6911FD2F307002080D7 /* CategoryService.swift in Sources */,
 				9FD956FA1FD2E7B20072535C /* Category.swift in Sources */,
 				9F49A6961FD2F68F002080D7 /* MasterSlideViewController.swift in Sources */,

@@ -11,9 +11,9 @@ import Alamofire
 
 class Network {
 
-    class func request(_ url: URL, method: HTTPMethod = .get, parameters: [String: Any]? = nil, log: Bool = true, encoding: ParameterEncoding = JSONEncoding.default, completion: @escaping (DataResponse<String>) -> Void) {
+    class func request(_ url: URL, method: HTTPMethod = .get, parameters: [String: Any]? = nil, log: Bool = true, encoding: ParameterEncoding = JSONEncoding.default, completion: @escaping (DataResponse<Any>) -> Void) {
 
-        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding).responseString(completionHandler: { response in
+        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding).responseJSON(completionHandler: { response in
 
             if log {
                 logAlamofireRequest(response: response)
@@ -30,7 +30,7 @@ class Network {
         return headers
     }
 
-    private class func logAlamofireRequest(response: DataResponse<String>) {
+    private class func logAlamofireRequest(response: DataResponse<Any>) {
 
         guard let request = response.request else { return }
         guard let url = request.url else { return }

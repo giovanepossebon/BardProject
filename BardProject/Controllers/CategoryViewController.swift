@@ -30,11 +30,11 @@ class CategoryViewController: UIViewController {
     }
 
     private func loadCategories() {
-        CategoryService.getCategories { categories in
-            switch categories.result {
+        CategoryService.getCategories { response in
+            switch response.result {
             case .success:
-                guard let result = categories.data else { return }
-                self.categories = result
+                guard let categories = response.data else { return }
+                self.categories = categories
             case .error(message: let error):
                 print(error)
             }

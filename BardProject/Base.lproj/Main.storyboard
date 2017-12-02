@@ -145,7 +145,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVg-7q-wA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-534" y="34"/>
+            <point key="canvasLocation" x="-1025" y="48"/>
         </scene>
         <!--Slides View Controller-->
         <scene sceneID="rPh-Mr-cdp">
@@ -187,6 +187,7 @@
                             <constraint firstItem="c8N-dp-MFP" firstAttribute="top" secondItem="knk-pe-JAU" secondAttribute="top" id="NSM-70-q2Z"/>
                             <constraint firstAttribute="bottom" secondItem="c8N-dp-MFP" secondAttribute="bottom" id="oOb-ee-dNH"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="5RH-nq-PFT"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="c8N-dp-MFP" id="nMd-2Z-RDP"/>

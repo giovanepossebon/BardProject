@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  Media.swift
 //  BardProject
 //
 //  Created by Giovane Possebon on 2/12/17.
@@ -8,14 +8,12 @@
 
 import Foundation
 
-struct Category: Codable {
-    let id: Int
-    let title: String
-    let imageUrl: URL
+struct Media: Codable {
+    let artefacts: [URL]
+    let animated: Bool
 
     enum CodingKeys: String, CodingKey {
-        case id = "Id"
-        case title = "Name"
-        case imageUrl = "Url"
+        case artefacts = "Artefact"
+        case animated = "Animated"
     }
 }

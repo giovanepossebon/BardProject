@@ -48,7 +48,7 @@ final class Bard: NSObject {
             self.request.append(buffer)
         }
 
-        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "pt_BR"))
+        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: languageIdentifier))
         speechRecognizer?.delegate = self
     }
 

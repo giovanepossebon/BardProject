@@ -11,17 +11,21 @@ import UIKit
 extension UIView {
 
     func applyDropShadow() {
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.7
-        self.layer.shadowOffset = .zero
-        self.layer.shadowRadius = 20
-        self.layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.7
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 20
+        layer.masksToBounds = false
     }
 
     func applyRoundedBorder(corners: UIRectCorner) {
-        self.layer.roundCorners(corners: corners, radius: 8)
+        layer.roundCorners(corners: corners, radius: 8)
     }
 
+    func applyCircleFormat() {
+        layer.cornerRadius = frame.size.width / 2
+        clipsToBounds = true
+    }
 }
 
 

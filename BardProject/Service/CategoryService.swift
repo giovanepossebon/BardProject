@@ -15,7 +15,7 @@ private struct Endpoint {
 class CategoryService: CategoryContract {
 
     static func getCategories(callback: @escaping (Response<[Category]>) -> ()) {
-        guard let url = URL(string: "\(BardAPI.url.baseURL)" + "\(Endpoint.categories)") else {
+        guard let url = URL(string: "\(BardAPI.url.baseURL + Endpoint.categories)") else {
             callback(Response<[Category]>(data: [], result: .error(message: "Invalid URL")))
             return
         }

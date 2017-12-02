@@ -4,5 +4,6 @@ use_frameworks!
 
 target 'BardProject' do
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireImage', '~> 3.3'
 
 end

@@ -13,6 +13,9 @@
 		9F49A6931FD2F335002080D7 /* BardApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6921FD2F335002080D7 /* BardApi.swift */; };
 		9F49A6961FD2F68F002080D7 /* MasterSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6951FD2F68F002080D7 /* MasterSlideViewController.swift */; };
 		9F49A6991FD3095E002080D7 /* CategoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6981FD3095E002080D7 /* CategoryContract.swift */; };
+		9F49A69B1FD31009002080D7 /* MediaContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A69A1FD31009002080D7 /* MediaContract.swift */; };
+		9F49A69D1FD311A3002080D7 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A69C1FD311A3002080D7 /* Media.swift */; };
+		9F49A69F1FD311E2002080D7 /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A69E1FD311E2002080D7 /* MediaService.swift */; };
 		9F7AAA051FD2EB8E004845DD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA041FD2EB8E004845DD /* UIView+Extension.swift */; };
 		9F7AAA071FD2EDCD004845DD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */; };
 		9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED191FD2E0FE0028261C /* AppDelegate.swift */; };
@@ -35,6 +38,9 @@
 		9F49A6921FD2F335002080D7 /* BardApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BardApi.swift; sourceTree = "<group>"; };
 		9F49A6951FD2F68F002080D7 /* MasterSlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSlideViewController.swift; sourceTree = "<group>"; };
 		9F49A6981FD3095E002080D7 /* CategoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryContract.swift; sourceTree = "<group>"; };
+		9F49A69A1FD31009002080D7 /* MediaContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContract.swift; sourceTree = "<group>"; };
+		9F49A69C1FD311A3002080D7 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		9F49A69E1FD311E2002080D7 /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
 		9F7AAA041FD2EB8E004845DD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		9F9CED161FD2E0FE0028261C /* BardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +106,7 @@
 			children = (
 				9F49A6971FD3094D002080D7 /* Contracts */,
 				9F49A6901FD2F307002080D7 /* CategoryService.swift */,
+				9F49A69E1FD311E2002080D7 /* MediaService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -108,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				9F49A6981FD3095E002080D7 /* CategoryContract.swift */,
+				9F49A69A1FD31009002080D7 /* MediaContract.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD956F91FD2E7B20072535C /* Category.swift */,
+				9F49A69C1FD311A3002080D7 /* Media.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,10 +282,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BardProject/Pods-BardProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -325,14 +336,17 @@
 			files = (
 				9F9CED1C1FD2E0FE0028261C /* CategoryViewController.swift in Sources */,
 				9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */,
+				9F49A69D1FD311A3002080D7 /* Media.swift in Sources */,
 				BA472D111FD2F6B4007C77B4 /* Bard.swift in Sources */,
 				9FD956F51FD2E5EB0072535C /* CategoryCell.swift in Sources */,
 				9F7AAA051FD2EB8E004845DD /* UIView+Extension.swift in Sources */,
+				9F49A69F1FD311E2002080D7 /* MediaService.swift in Sources */,
 				9F49A6911FD2F307002080D7 /* CategoryService.swift in Sources */,
 				9FD956FA1FD2E7B20072535C /* Category.swift in Sources */,
 				9F49A6961FD2F68F002080D7 /* MasterSlideViewController.swift in Sources */,
 				9F49A6931FD2F335002080D7 /* BardApi.swift in Sources */,
 				9F49A68E1FD2F28C002080D7 /* Network.swift in Sources */,
+				9F49A69B1FD31009002080D7 /* MediaContract.swift in Sources */,
 				9F7AAA071FD2EDCD004845DD /* CALayer+Extension.swift in Sources */,
 				9F49A6991FD3095E002080D7 /* CategoryContract.swift in Sources */,
 			);
@@ -473,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MY789Q7PK7;
 				INFOPLIST_FILE = BardProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bard.BardProject;
@@ -488,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MY789Q7PK7;
 				INFOPLIST_FILE = BardProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bard.BardProject;

@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct Category {
+struct Category: Codable {
     let id: Int
     let title: String
-    let imageUrl: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case title = "Name"
+    }
 }

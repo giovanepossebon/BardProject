@@ -11,6 +11,8 @@
 		9F49A68E1FD2F28C002080D7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A68D1FD2F28C002080D7 /* Network.swift */; };
 		9F49A6911FD2F307002080D7 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6901FD2F307002080D7 /* CategoryService.swift */; };
 		9F49A6931FD2F335002080D7 /* BardApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6921FD2F335002080D7 /* BardApi.swift */; };
+		9F49A6961FD2F68F002080D7 /* MasterSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6951FD2F68F002080D7 /* MasterSlideViewController.swift */; };
+		9F49A6991FD3095E002080D7 /* CategoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6981FD3095E002080D7 /* CategoryContract.swift */; };
 		9F7AAA051FD2EB8E004845DD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA041FD2EB8E004845DD /* UIView+Extension.swift */; };
 		9F7AAA071FD2EDCD004845DD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */; };
 		9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED191FD2E0FE0028261C /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 		9F49A68D1FD2F28C002080D7 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9F49A6901FD2F307002080D7 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		9F49A6921FD2F335002080D7 /* BardApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BardApi.swift; sourceTree = "<group>"; };
+		9F49A6951FD2F68F002080D7 /* MasterSlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSlideViewController.swift; sourceTree = "<group>"; };
+		9F49A6981FD3095E002080D7 /* CategoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryContract.swift; sourceTree = "<group>"; };
 		9F7AAA041FD2EB8E004845DD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		9F9CED161FD2E0FE0028261C /* BardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,9 +96,18 @@
 		9F49A6941FD2F39E002080D7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9F49A6971FD3094D002080D7 /* Contracts */,
 				9F49A6901FD2F307002080D7 /* CategoryService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		9F49A6971FD3094D002080D7 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				9F49A6981FD3095E002080D7 /* CategoryContract.swift */,
+			);
+			path = Contracts;
 			sourceTree = "<group>";
 		};
 		9F7AAA031FD2EB68004845DD /* Extension */ = {
@@ -147,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9F9CED1B1FD2E0FE0028261C /* CategoryViewController.swift */,
+				9F49A6951FD2F68F002080D7 /* MasterSlideViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,9 +318,11 @@
 				9F7AAA051FD2EB8E004845DD /* UIView+Extension.swift in Sources */,
 				9F49A6911FD2F307002080D7 /* CategoryService.swift in Sources */,
 				9FD956FA1FD2E7B20072535C /* Category.swift in Sources */,
+				9F49A6961FD2F68F002080D7 /* MasterSlideViewController.swift in Sources */,
 				9F49A6931FD2F335002080D7 /* BardApi.swift in Sources */,
 				9F49A68E1FD2F28C002080D7 /* Network.swift in Sources */,
 				9F7AAA071FD2EDCD004845DD /* CALayer+Extension.swift in Sources */,
+				9F49A6991FD3095E002080D7 /* CategoryContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

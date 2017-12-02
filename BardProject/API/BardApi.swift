@@ -13,7 +13,7 @@ struct BardAPI {
     // API Configs, keys, etc
 
     struct url {
-        // service urls
+        static let baseURL = "http://ec2-54-202-16-95.us-west-2.compute.amazonaws.com/api/"
     }
 
 }

@@ -12,6 +12,7 @@ final class MasterSlideViewController: UIViewController {
 
     @IBOutlet weak var imgToShow: UIImageView!
     var slidesViewController: SlidesViewController!
+    var suggestionsViewController: SuggestionsViewController!
     
     @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
     
@@ -57,8 +58,14 @@ final class MasterSlideViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let slidesVC = segue.destination as? SlidesViewController {
+            slidesViewController = slidesVC
             slidesVC.delegate = self
             slidesVC.images = [#imageLiteral(resourceName: "tree1"), #imageLiteral(resourceName: "tree2"), #imageLiteral(resourceName: "tree3")]
+        }
+        if let suggestionsVC = segue.destination as? SuggestionsViewController {
+            suggestionsViewController = suggestionsVC
+            suggestionsVC.delegate = self
+            suggestionsVC.images = [#imageLiteral(resourceName: "tree1"), #imageLiteral(resourceName: "tree2"), #imageLiteral(resourceName: "tree3")]
         }
     }
 }
@@ -66,5 +73,12 @@ final class MasterSlideViewController: UIViewController {
 extension MasterSlideViewController: SlidesDelegate {
     func didSelectSlideImage(image: UIImage) {
         imgToShow.image = image
+    }
+}
+
+extension MasterSlideViewController: SuggestionsDelegate {
+    func didSelectSuggestionImage(image: UIImage) {
+        imgToShow.image = image
+        slidesViewController.add(image)
     }
 }

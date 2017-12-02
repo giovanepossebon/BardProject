@@ -12,28 +12,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SlideCell" id="gTV-IL-0wX" customClass="SlideCell" customModule="BardProject" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SuggestionCell" id="gTV-IL-0wX" customClass="SuggestionCell" customModule="BardProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="109" height="106"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="109" height="106"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="osa-pl-ufa">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-xD-srQ">
+                        <rect key="frame" x="0.0" y="0.0" width="109" height="106"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="osa-pl-ufa" secondAttribute="trailing" id="5xt-VV-BLh"/>
-                <constraint firstItem="osa-pl-ufa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Dc8-Gl-60R"/>
-                <constraint firstAttribute="bottom" secondItem="osa-pl-ufa" secondAttribute="bottom" id="f11-lz-LlW"/>
-                <constraint firstItem="osa-pl-ufa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lNp-Nn-fB1"/>
+                <constraint firstItem="pcg-xD-srQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Owc-zA-Ybk"/>
+                <constraint firstAttribute="trailing" secondItem="pcg-xD-srQ" secondAttribute="trailing" id="TTD-OJ-t8P"/>
+                <constraint firstAttribute="bottom" secondItem="pcg-xD-srQ" secondAttribute="bottom" id="Vfe-3P-0Wm"/>
+                <constraint firstItem="pcg-xD-srQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dFy-f1-HqC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="109" height="106"/>
             <connections>
-                <outlet property="slideImage" destination="osa-pl-ufa" id="EIp-vG-giV"/>
+                <outlet property="slideImage" destination="pcg-xD-srQ" id="re2-fa-hF3"/>
             </connections>
+            <point key="canvasLocation" x="157.5" y="104"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -12,6 +12,13 @@ final class MasterSlideViewController: UIViewController {
 
     @IBOutlet weak var imgToShow: UIImageView!
     var slidesViewController: SlidesViewController!
+    
+    @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupGestures()
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -20,6 +27,32 @@ final class MasterSlideViewController: UIViewController {
 
     private func loadGif() {
         imgToShow.loadGif(name: "test")
+    }
+
+    private func setupGestures() {
+        let upGesture = UISwipeGestureRecognizer(target: self, action: #selector(showHistory))
+        let downGesture = UISwipeGestureRecognizer(target: self, action: #selector(hideHistory))
+        upGesture.direction = UISwipeGestureRecognizerDirection.up
+        downGesture.direction = UISwipeGestureRecognizerDirection.down
+        view.addGestureRecognizer(upGesture)
+        view.addGestureRecognizer(downGesture)
+    }
+
+
+    func shouldShowHistory(_ show: Bool) {
+        slidesContainerBottomConstraint.constant = show ? 0.0 : 80.0
+
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc func showHistory() {
+        shouldShowHistory(true)
+    }
+
+    @objc func hideHistory() {
+        shouldShowHistory(false)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

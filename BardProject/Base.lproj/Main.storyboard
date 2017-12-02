@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-9f-4FT">
-                                <rect key="frame" x="0.0" y="688" width="1024" height="80"/>
+                                <rect key="frame" x="0.0" y="768" width="1024" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="mKx-7m-1bO"/>
@@ -109,12 +109,13 @@
                             <constraint firstItem="wRH-5a-taP" firstAttribute="trailing" secondItem="nh0-9f-4FT" secondAttribute="trailing" id="S1I-oN-L2g"/>
                             <constraint firstItem="sa8-sr-UPj" firstAttribute="top" secondItem="wRH-5a-taP" secondAttribute="top" id="otQ-SP-hXy"/>
                             <constraint firstItem="wRH-5a-taP" firstAttribute="trailing" secondItem="sa8-sr-UPj" secondAttribute="trailing" id="pb1-J1-bJE"/>
-                            <constraint firstItem="nh0-9f-4FT" firstAttribute="bottom" secondItem="wRH-5a-taP" secondAttribute="bottom" id="pee-bY-cAO"/>
+                            <constraint firstItem="nh0-9f-4FT" firstAttribute="bottom" secondItem="wRH-5a-taP" secondAttribute="bottom" constant="80" id="pee-bY-cAO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wRH-5a-taP"/>
                     </view>
                     <connections>
                         <outlet property="imgToShow" destination="sa8-sr-UPj" id="iP4-j0-lik"/>
+                        <outlet property="slidesContainerBottomConstraint" destination="pee-bY-cAO" id="m4Q-kO-03S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8j-Fj-r5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,18 +158,18 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c8N-dp-MFP">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69762323943661975" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hhj-yO-z9o">
-                                    <size key="itemSize" width="76" height="76"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="6" minimumInteritemSpacing="6" id="Hhj-yO-z9o">
+                                    <size key="itemSize" width="70" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WFr-xh-9XU">
-                                        <rect key="frame" x="4" y="2" width="76" height="76"/>
+                                        <rect key="frame" x="4" y="5" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>

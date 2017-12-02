@@ -33,6 +33,9 @@
 		BA472D1A1FD3194F007C77B4 /* SlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D181FD3194F007C77B4 /* SlideCell.swift */; };
 		BA472D1B1FD3194F007C77B4 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA472D191FD3194F007C77B4 /* SlideCell.xib */; };
 		BA472D1D1FD31B7A007C77B4 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D1C1FD31B7A007C77B4 /* SlidesViewController.swift */; };
+		BA472D1F1FD32EED007C77B4 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D1E1FD32EED007C77B4 /* SuggestionsViewController.swift */; };
+		BA472D221FD32F4F007C77B4 /* SuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D201FD32F4F007C77B4 /* SuggestionCell.swift */; };
+		BA472D231FD32F4F007C77B4 /* SuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA472D211FD32F4F007C77B4 /* SuggestionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		BA472D181FD3194F007C77B4 /* SlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCell.swift; sourceTree = "<group>"; };
 		BA472D191FD3194F007C77B4 /* SlideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
 		BA472D1C1FD31B7A007C77B4 /* SlidesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
+		BA472D1E1FD32EED007C77B4 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		BA472D201FD32F4F007C77B4 /* SuggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCell.swift; sourceTree = "<group>"; };
+		BA472D211FD32F4F007C77B4 /* SuggestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 				9F9CED1B1FD2E0FE0028261C /* CategoryViewController.swift */,
 				9F49A6951FD2F68F002080D7 /* MasterSlideViewController.swift */,
 				BA472D1C1FD31B7A007C77B4 /* SlidesViewController.swift */,
+				BA472D1E1FD32EED007C77B4 /* SuggestionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +206,8 @@
 				9FD956F61FD2E60B0072535C /* CategoryCell.xib */,
 				BA472D181FD3194F007C77B4 /* SlideCell.swift */,
 				BA472D191FD3194F007C77B4 /* SlideCell.xib */,
+				BA472D201FD32F4F007C77B4 /* SuggestionCell.swift */,
+				BA472D211FD32F4F007C77B4 /* SuggestionCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F9CED241FD2E0FE0028261C /* LaunchScreen.storyboard in Resources */,
+				BA472D231FD32F4F007C77B4 /* SuggestionCell.xib in Resources */,
 				BA472D1B1FD3194F007C77B4 /* SlideCell.xib in Resources */,
 				9F9CED211FD2E0FE0028261C /* Assets.xcassets in Resources */,
 				9F9CED1F1FD2E0FE0028261C /* Main.storyboard in Resources */,
@@ -357,6 +367,7 @@
 				9F49A6A11FD32CB9002080D7 /* CategoryCell.swift in Sources */,
 				BA472D131FD31390007C77B4 /* UIImage+Extension.swift in Sources */,
 				9F9CED1C1FD2E0FE0028261C /* CategoryViewController.swift in Sources */,
+				BA472D221FD32F4F007C77B4 /* SuggestionCell.swift in Sources */,
 				9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */,
 				9F49A69D1FD311A3002080D7 /* Media.swift in Sources */,
 				9F49A69F1FD311E2002080D7 /* MediaService.swift in Sources */,
@@ -366,6 +377,7 @@
 				9F49A6A51FD32F6B002080D7 /* Bard.swift in Sources */,
 				9F49A6911FD2F307002080D7 /* CategoryService.swift in Sources */,
 				9FD956FA1FD2E7B20072535C /* Category.swift in Sources */,
+				BA472D1F1FD32EED007C77B4 /* SuggestionsViewController.swift in Sources */,
 				9F49A6961FD2F68F002080D7 /* MasterSlideViewController.swift in Sources */,
 				9F49A6A31FD32CFF002080D7 /* UIView+Extension.swift in Sources */,
 				9F49A6931FD2F335002080D7 /* BardApi.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  SlidesViewController.swift
+//  SuggestionsViewController.swift
 //  BardProject
 //
 //  Created by Carlos Corrêa on 02/12/17.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-protocol SlidesDelegate: class {
-    func didSelectSlideImage(image: UIImage)
+protocol SuggestionsDelegate: class {
+    func didSelectSuggestionImage(image: UIImage)
 }
 
-class SlidesViewController: UIViewController {
+class SuggestionsViewController: UIViewController {
 
-    static let identifier = "SlidesViewController"
+    static let identifier = "SuggestionsDelegate"
 
     @IBOutlet weak var collectionView: UICollectionView!
-    weak var delegate: SlidesDelegate?
+    weak var delegate: SuggestionsDelegate?
 
     internal var images: [UIImage] = [] {
         didSet {
@@ -33,11 +33,7 @@ class SlidesViewController: UIViewController {
     }
 
     private func setupCollectionView() {
-        collectionView.register(UINib(nibName: SlideCell.identifier, bundle: nil), forCellWithReuseIdentifier: SlideCell.identifier)
-    }
-
-    func add(_ image: UIImage) {
-        images.append(image)
+        collectionView.register(UINib(nibName: SuggestionCell.identifier, bundle: nil), forCellWithReuseIdentifier: SuggestionCell.identifier)
     }
 
     func reloadData() {
@@ -49,13 +45,13 @@ class SlidesViewController: UIViewController {
     }
 }
 
-extension SlidesViewController: UICollectionViewDataSource {
+extension SuggestionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlideCell.identifier, for: indexPath) as? SlideCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SuggestionCell.identifier, for: indexPath) as? SuggestionCell else { return UICollectionViewCell() }
 
         let slide = images[indexPath.row]
         cell.populate(with: slide)
@@ -64,9 +60,9 @@ extension SlidesViewController: UICollectionViewDataSource {
     }
 }
 
-extension SlidesViewController: UICollectionViewDelegate {
+extension SuggestionsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let image = images[indexPath.row]
-        delegate?.didSelectSlideImage(image: image)
+        delegate?.didSelectSuggestionImage(image: image)
     }
 }

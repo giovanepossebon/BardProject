@@ -12,7 +12,9 @@ final class MasterSlideViewController: UIViewController {
 
     @IBOutlet weak var imgToShow: UIImageView!
     @IBOutlet weak var buttonRecord: UIButton!
-
+    @IBOutlet weak var buttonPlay: UIButton!
+    @IBOutlet weak var overlayView: UIView!
+    
     var slidesViewController: SlidesViewController!
     let bard = Bard(with: 1.0, languageIdentifier: "pt_BR")
 
@@ -28,9 +30,18 @@ final class MasterSlideViewController: UIViewController {
         setupGestures()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupPlayButtonUI()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         slidesViewController?.reloadData()
+    }
+
+    private func setupPlayButtonUI() {
+        buttonPlay.layer.cornerRadius = 10.0
     }
 
     private func requestImage(with text: String) {
@@ -120,6 +131,9 @@ final class MasterSlideViewController: UIViewController {
     @IBAction func didTouchToggleRecording(_ sender: Any) {
         if bard.isListening {
             bard.stopRecognition()
+            UIView.animate(withDuration: 0.5) {
+                self.overlayView.alpha = 0
+            }
         } else {
             startBardRecording()
         }

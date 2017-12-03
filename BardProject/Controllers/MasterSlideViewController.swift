@@ -18,6 +18,8 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var slidesArrowView: UIView!
     @IBOutlet weak var slidesArrowImage: UIImageView!
     @IBOutlet weak var suggestionsArrowImage: UIImageView!
+    @IBOutlet weak var animatedSwitch: UISwitch!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var slidesViewController: SlidesViewController!
     var suggestionsViewController: SuggestionsViewController!
@@ -50,12 +52,13 @@ final class MasterSlideViewController: UIViewController {
     }
 
     private func requestImage(with text: String) {
-        let request = MediaServiceRequest(text: text, animated: true, categoryId: 1, realData: true)
+        let request = MediaServiceRequest(text: text, animated: animatedSwitch.isOn, categoryId: 1, realData: true)
         MediaService.getMedia(request: request) { response in
             switch response.result {
             case .success:
                 guard let media = response.data, let img = media.artefacts.first else { return }
 
+                self.spinner.startAnimating()
                 self.imgToShow.af_setImage(withURL: img, completion: { [weak self] resultData in
                     self?.startBardRecording()
                     if let imgView = self?.imgToShow, let imageData = resultData.data {
@@ -68,6 +71,7 @@ final class MasterSlideViewController: UIViewController {
                             if let image = UIImage(data: imageData) {
                                 self?.slidesViewController.add(image)
                             }
+                            self?.spinner.stopAnimating()
                         }, completion: nil)
                     }
                 })

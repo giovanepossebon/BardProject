@@ -131,12 +131,20 @@ final class MasterSlideViewController: UIViewController {
     @IBAction func didTouchToggleRecording(_ sender: Any) {
         if bard.isListening {
             bard.stopRecognition()
-            UIView.animate(withDuration: 0.5) {
-                self.overlayView.alpha = 0
-            }
         } else {
             startBardRecording()
+            hideOverlay()
         }
+    }
+
+    private func hideOverlay() {
+        UIView.animate(withDuration: 0.5) {
+            self.overlayView.alpha = 0
+        }
+    }
+
+    @IBAction func exitButtonTouched(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -157,6 +165,7 @@ extension MasterSlideViewController: BardDelegate {
     }
 
     func didStartRecording() {
+        buttonRecord.isHidden = false
         buttonRecord.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
     }
 

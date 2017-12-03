@@ -16,6 +16,7 @@ struct MediaServiceRequest {
     let text: String
     let animated: Bool
     let categoryId: Int
+    let realData: Bool
 }
 
 class MediaService: MediaContract {
@@ -30,7 +31,8 @@ class MediaService: MediaContract {
         let params: [String: Any] = [
             "Artefact": request.text,
             "Animated": request.animated,
-            "StoryClassId": request.categoryId
+            "StoryClassId": request.categoryId,
+            "GetRealData": request.realData
         ]
 
         Network.request(url, method: .post, parameters: params) { response in

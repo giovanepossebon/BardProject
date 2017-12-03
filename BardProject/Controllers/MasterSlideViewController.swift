@@ -14,7 +14,7 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var buttonRecord: UIButton!
 
     var slidesViewController: SlidesViewController!
-    let bard = Bard(with: 2.0, languageIdentifier: "pt_BR")
+    let bard = Bard(with: 1.0, languageIdentifier: "pt_BR")
 
     var suggestionsViewController: SuggestionsViewController!
     
@@ -34,12 +34,17 @@ final class MasterSlideViewController: UIViewController {
     }
 
     private func requestImage(with text: String) {
-        let request = MediaServiceRequest(text: text, animated: true, categoryId: 0)
+        let request = MediaServiceRequest(text: text, animated: false, categoryId: 1, realData: true)
         MediaService.getMedia(request: request) { response in
             switch response.result {
             case .success:
                 guard let media = response.data, let img = media.artefacts.first else { return }
-                self.imgToShow.af_setImage(withURL: img, completion: { [weak self] _ in
+
+                self.imgToShow.af_setImage(withURL: img, completion: { [weak self] image in
+                    if media.animated {
+                        self?.imgToShow.image = UIImage.gif(data: image.data!)
+                    }
+
                     self?.startBardRecording()
                 })
             case .error(message: let error):

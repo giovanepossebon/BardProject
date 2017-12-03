@@ -24,7 +24,7 @@ final class MasterSlideViewController: UIViewController {
     var slidesViewController: SlidesViewController!
     var suggestionsViewController: SuggestionsViewController!
 
-    let bard = Bard(with: 1.0, languageIdentifier: "pt_BR")
+    let bard = Bard(with: 1, languageIdentifier: "pt_BR")
     var category: Category?
 
     @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
@@ -55,12 +55,11 @@ final class MasterSlideViewController: UIViewController {
     private func requestImage(with text: String) {
         guard let category = category else { return }
         let request = MediaServiceRequest(text: text, animated: animatedSwitch.isOn, categoryId: category.id, realData: true)
+        spinner.startAnimating()
         MediaService.getMedia(request: request) { response in
             switch response.result {
             case .success:
                 guard let media = response.data, let img = media.artefacts.first else { return }
-
-                self.spinner.startAnimating()
                 self.imgToShow.af_setImage(withURL: img, completion: { [weak self] resultData in
                     self?.startBardRecording()
                     if let imgView = self?.imgToShow, let imageData = resultData.data {

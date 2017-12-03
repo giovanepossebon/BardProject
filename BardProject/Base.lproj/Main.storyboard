@@ -372,9 +372,9 @@
                                     <constraint firstItem="vri-ai-xXp" firstAttribute="leading" secondItem="slk-YG-Iae" secondAttribute="trailing" constant="26" id="XtN-aQ-PIZ"/>
                                     <constraint firstItem="vri-ai-xXp" firstAttribute="top" secondItem="gH4-57-SOy" secondAttribute="bottom" constant="8" symbolic="YES" id="bRd-nY-nLz"/>
                                     <constraint firstItem="6Vo-Ww-Dp4" firstAttribute="top" secondItem="xdD-pU-Uy5" secondAttribute="top" id="cdq-Lh-hnh"/>
+                                    <constraint firstItem="slk-YG-Iae" firstAttribute="top" secondItem="xdD-pU-Uy5" secondAttribute="top" constant="437" id="d4m-Sh-2BI"/>
                                     <constraint firstItem="gH4-57-SOy" firstAttribute="top" secondItem="xdD-pU-Uy5" secondAttribute="top" constant="310" id="ikb-Ux-dAS"/>
                                     <constraint firstItem="HlH-I8-bS2" firstAttribute="leading" secondItem="xdD-pU-Uy5" secondAttribute="leading" constant="330" id="vnO-FL-bA1"/>
-                                    <constraint firstAttribute="bottom" secondItem="slk-YG-Iae" secondAttribute="bottom" constant="288" id="yE2-Vg-vxJ"/>
                                     <constraint firstItem="HlH-I8-bS2" firstAttribute="top" secondItem="xdD-pU-Uy5" secondAttribute="top" constant="288" id="zqp-Te-96x"/>
                                 </constraints>
                             </view>

@@ -45,12 +45,12 @@ final class Bard: NSObject {
     }
 
     private func setupAudioEngine() {
+        audioEngine.inputNode.removeTap(onBus: 0)
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, _) in
             self.request.append(buffer)
         }
-
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: languageIdentifier))
         speechRecognizer?.delegate = self
     }
@@ -75,6 +75,7 @@ final class Bard: NSObject {
     }
 
     func startRecording() throws {
+        setupAudioEngine()
         audioEngine.prepare()
         try audioEngine.start()
 
@@ -126,6 +127,7 @@ final class Bard: NSObject {
     }
 
     private func tokenizedSentence(_ sentence: String) -> String {
+        return sentence
         let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .joinNames]
         let schemes = NSLinguisticTagger.availableTagSchemes(forLanguage: "pt")
         let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))

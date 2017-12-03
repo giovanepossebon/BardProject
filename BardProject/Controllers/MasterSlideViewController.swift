@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WebKit
 
-final class MasterSlideViewController: UIViewController {
+final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var imgToShow: UIImageView!
     @IBOutlet weak var buttonRecord: UIButton!
@@ -19,12 +20,15 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var slidesArrowImage: UIImageView!
     @IBOutlet weak var suggestionsArrowImage: UIImageView!
     @IBOutlet weak var animatedSwitch: UISwitch!
+    @IBOutlet weak var drawingSwitch: UISwitch!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var txtSpeech: UITextView!
     
     var slidesViewController: SlidesViewController!
     var suggestionsViewController: SuggestionsViewController!
 
-    let bard = Bard(with: 1, languageIdentifier: "pt_BR")
+    let bard = Bard(with: 0.8, languageIdentifier: "pt_BR")
     var category: Category?
 
     @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
@@ -34,6 +38,7 @@ final class MasterSlideViewController: UIViewController {
         super.viewDidLoad()
 
         bard.delegate = self
+        webView.navigationDelegate = self
         setupGestures()
     }
 
@@ -50,6 +55,7 @@ final class MasterSlideViewController: UIViewController {
     private func setupPlayButtonUI() {
         buttonPlay.layer.cornerRadius = 10.0
         slidesArrowView.layer.cornerRadius = slidesArrowView.frame.width / 2
+        txtSpeech.layer.cornerRadius = 10.0
     }
 
     private func requestImage(with text: String) {
@@ -59,28 +65,76 @@ final class MasterSlideViewController: UIViewController {
         MediaService.getMedia(request: request) { response in
             switch response.result {
             case .success:
-                guard let media = response.data, let img = media.artefacts.first else { return }
-                self.imgToShow.af_setImage(withURL: img, completion: { [weak self] resultData in
-                    self?.startBardRecording()
-                    if let imgView = self?.imgToShow, let imageData = resultData.data {
-                        UIView.transition(with: imgView, duration: 0.8, options: .transitionCurlUp, animations: {
-                            if media.animated {
-                                imgView.image = UIImage.gif(data: imageData)
-                            } else {
-                                imgView.image = UIImage(data: imageData)
-                            }
-                            if let image = UIImage(data: imageData) {
-                                self?.slidesViewController.add(image)
-                            }
-                            self?.spinner.stopAnimating()
-                        }, completion: nil)
-                    }
-                })
+                guard let media = response.data, let img = media.artefacts.first else {
+                    self.restartBard()
+                    return
+                }
 
+                if self.drawingSwitch.isOn {
+                    self.displayDrawing(candidateURL: img)
+                } else {
+                    UIView.animate(withDuration: 0.5) {
+                        self.webView.alpha = 0
+                    }
+                    self.imgToShow.af_setImage(withURL: img, completion: { [weak self] resultData in
+                        self?.startBardRecording()
+                        if let imgView = self?.imgToShow, let imageData = resultData.data {
+                            UIView.transition(with: imgView, duration: 0.8, options: .transitionCurlUp, animations: {
+                                if media.animated {
+                                    imgView.image = UIImage.gif(data: imageData)
+                                } else {
+                                    imgView.image = UIImage(data: imageData)
+                                }
+                                if let image = UIImage(data: imageData) {
+                                    self?.slidesViewController.add(image)
+                                }
+                                self?.spinner.stopAnimating()
+                            }, completion: nil)
+                        }
+                    })
+                }
             case .error(message: let error):
-                print(error)
+                print(error.debugDescription)
+                self.restartBard()
             }
         }
+    }
+
+    private func restartBard() {
+        print("--- BARD RESTARTED ---")
+        self.spinner.stopAnimating()
+        self.startBardRecording()
+    }
+
+    private func displayDrawing(candidateURL: URL) {
+        UIView.animate(withDuration: 0.5) {
+            self.webView.alpha = 1
+        }
+        let finalURL = "http://ec2-54-242-167-114.compute-1.amazonaws.com/?w=\(Int(webView.frame.width/2))&h=\(Int(webView.frame.height/2))&url="+candidateURL.absoluteString.removingPercentEncoding!
+        if let url = URL(string: finalURL) {
+            let request = URLRequest(url: url)
+            _ = webView.load(request)
+        }
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        spinner.stopAnimating()
+        startBardRecording()
+    }
+
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        spinner.stopAnimating()
+        startBardRecording()
+    }
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        spinner.stopAnimating()
+        startBardRecording()
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        spinner.stopAnimating()
+        startBardRecording()
     }
 
     private func startBardRecording() {
@@ -186,6 +240,7 @@ extension MasterSlideViewController: BardDelegate {
 
     func recognizedSpeech(text: String) {
         print(text)
+        txtSpeech.text = text
     }
 
     func didStartRecording() {

@@ -43,5 +43,6 @@ class CategoryCell: UICollectionViewCell {
     func populate(with category: Category) {
         categoryTitle.text = category.title.uppercased()
         categoryImage.af_setImage(withURL: category.imageUrl)
+        categoryImage.af_setImage(withURL: category.imageUrl, placeholderImage: #imageLiteral(resourceName: "bard"))
     }
 }

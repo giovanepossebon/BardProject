@@ -32,12 +32,13 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
     var suggestionsViewController: SuggestionsViewController!
     let bard = Bard(with: 0.8, languageIdentifier: "pt_BR")
     var category: Category?
+    let wkController = WKUserContentController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         bard.delegate = self
-        webView.navigationDelegate = self
         setupGestures()
+        webView.navigationDelegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -92,7 +93,6 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
                     })
                 }
             case .error(message: let error):
-                print(error.debugDescription)
                 self.restartBard()
             }
         }
@@ -104,14 +104,23 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
         self.startBardRecording()
     }
 
+    var hasLoadedWebview = false
     private func displayDrawing(candidateURL: URL) {
         UIView.animate(withDuration: 0.5) {
             self.webView.alpha = 1
         }
-        let finalURL = "http://ec2-54-242-167-114.compute-1.amazonaws.com/?w=\(Int(webView.frame.width/2))&h=\(Int(webView.frame.height/2))&url="+candidateURL.absoluteString.removingPercentEncoding!
-        if let url = URL(string: finalURL) {
+        let finalURL = "http://ec2-54-242-167-114.compute-1.amazonaws.com/?w=\(Int(webView.frame.width))&h=\(Int(webView.frame.height))&url="+candidateURL.absoluteString.removingPercentEncoding!
+
+        if let url = URL(string: finalURL), hasLoadedWebview == false {
             let request = URLRequest(url: url)
             _ = webView.load(request)
+            hasLoadedWebview = true
+        } else {
+            print("hasLoadedWebView")
+            let command = "pushUrl('\(candidateURL.absoluteString)');"
+            webView.evaluateJavaScript(command) { [weak self] _, _ in
+                self?.restartBard()
+            }
         }
     }
 

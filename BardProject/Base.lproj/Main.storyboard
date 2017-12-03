@@ -132,7 +132,7 @@
         <!--Master Slide View Controller-->
         <scene sceneID="M2G-5j-ghQ">
             <objects>
-                <viewController id="LX9-MF-PFo" customClass="MasterSlideViewController" customModule="BardProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MasterSlideViewController" id="LX9-MF-PFo" customClass="MasterSlideViewController" customModule="BardProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="axj-19-znA">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

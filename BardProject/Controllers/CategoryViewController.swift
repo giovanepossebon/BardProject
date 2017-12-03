@@ -43,7 +43,10 @@ class CategoryViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? MasterSlideViewController {
-            // TODO: Send category information
+            guard let selectedRow = collectionView.indexPathsForSelectedItems?.first?.row else { return }
+
+            guard let category = categories?[selectedRow] else { return }
+            vc.category = category
         }
     }
 

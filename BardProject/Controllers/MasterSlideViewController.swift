@@ -14,6 +14,8 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var buttonRecord: UIButton!
     @IBOutlet weak var buttonPlay: UIButton!
     @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var slidesArrowView: UIView!
+    @IBOutlet weak var slidesArrowImage: UIImageView!
     
     var slidesViewController: SlidesViewController!
     var suggestionsViewController: SuggestionsViewController!
@@ -42,6 +44,7 @@ final class MasterSlideViewController: UIViewController {
 
     private func setupPlayButtonUI() {
         buttonPlay.layer.cornerRadius = 10.0
+        slidesArrowView.layer.cornerRadius = slidesArrowView.frame.width / 2
     }
 
     private func requestImage(with text: String) {
@@ -107,10 +110,12 @@ final class MasterSlideViewController: UIViewController {
 
     @objc func showHistory() {
         shouldShowHistory(true)
+        slidesArrowImage.image = #imageLiteral(resourceName: "arrow-down")
     }
 
     @objc func hideHistory() {
         shouldShowHistory(false)
+        slidesArrowImage.image = #imageLiteral(resourceName: "arrow-up")
     }
 
     @objc func showSuggestions() {

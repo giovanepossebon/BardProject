@@ -99,7 +99,11 @@ final class Bard: NSObject {
         let currentDate = Date()
         let secondsOfSilence = currentDate.timeIntervalSince(lastRecognizedDate)
         if (secondsOfSilence > TimeInterval(speechInterval) && candidateText != "") {
-            delegate?.didFinishStorytelling(text: tokenizedSentence(candidateText))
+            var finalSentence = tokenizedSentence(candidateText)
+            if finalSentence.isEmpty {
+                finalSentence = candidateText
+            }
+            delegate?.didFinishStorytelling(text: finalSentence)
             candidateText = ""
             pauseRecording()
         }

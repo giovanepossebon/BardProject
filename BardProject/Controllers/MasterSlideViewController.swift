@@ -14,7 +14,7 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var buttonRecord: UIButton!
 
     var slidesViewController: SlidesViewController!
-    let bard = Bard(with: 2.0, languageIdentifier: "pt_BR")
+    let bard = Bard(with: 1, languageIdentifier: "pt_BR")
 
     var suggestionsViewController: SuggestionsViewController!
     
@@ -39,9 +39,16 @@ final class MasterSlideViewController: UIViewController {
             switch response.result {
             case .success:
                 guard let media = response.data, let img = media.artefacts.first else { return }
-                self.imgToShow.af_setImage(withURL: img, completion: { [weak self] _ in
+
+                self.imgToShow.af_setImage(withURL: img, completion: { [weak self] resultData in
                     self?.startBardRecording()
+                    if let imgView = self?.imgToShow, let imageData = resultData.data {
+                        UIView.transition(with: imgView, duration: 0.8, options: .transitionCurlUp, animations: {
+                            imgView.image = UIImage(data: imageData)
+                        }, completion: nil)
+                    }
                 })
+
             case .error(message: let error):
                 print(error)
             }

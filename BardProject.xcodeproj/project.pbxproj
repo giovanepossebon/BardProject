@@ -19,6 +19,8 @@
 		9F49A6A11FD32CB9002080D7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A01FD32CB9002080D7 /* CategoryCell.swift */; };
 		9F49A6A31FD32CFF002080D7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A21FD32CFF002080D7 /* UIView+Extension.swift */; };
 		9F49A6A51FD32F6B002080D7 /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49A6A41FD32F6B002080D7 /* Bard.swift */; };
+		9F49A6A81FD383D7002080D7 /* Vacations in Phuket.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F49A6A71FD383D4002080D7 /* Vacations in Phuket.ttf */; };
+		9F49A6AA1FD383E1002080D7 /* MarkerFelt.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9F49A6A91FD383E1002080D7 /* MarkerFelt.ttc */; };
 		9F7AAA071FD2EDCD004845DD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */; };
 		9F9CED1A1FD2E0FE0028261C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED191FD2E0FE0028261C /* AppDelegate.swift */; };
 		9F9CED1C1FD2E0FE0028261C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CED1B1FD2E0FE0028261C /* CategoryViewController.swift */; };
@@ -53,6 +55,8 @@
 		9F49A6A01FD32CB9002080D7 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		9F49A6A21FD32CFF002080D7 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9F49A6A41FD32F6B002080D7 /* Bard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bard.swift; sourceTree = "<group>"; };
+		9F49A6A71FD383D4002080D7 /* Vacations in Phuket.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vacations in Phuket.ttf"; sourceTree = "<group>"; };
+		9F49A6A91FD383E1002080D7 /* MarkerFelt.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = MarkerFelt.ttc; sourceTree = "<group>"; };
 		9F7AAA061FD2EDCD004845DD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		9F9CED161FD2E0FE0028261C /* BardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CED191FD2E0FE0028261C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 			path = Contracts;
 			sourceTree = "<group>";
 		};
+		9F49A6A61FD383C5002080D7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F49A6A71FD383D4002080D7 /* Vacations in Phuket.ttf */,
+				9F49A6A91FD383E1002080D7 /* MarkerFelt.ttc */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9F7AAA031FD2EB68004845DD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +182,7 @@
 		9F9CED181FD2E0FE0028261C /* BardProject */ = {
 			isa = PBXGroup;
 			children = (
+				9F49A6A61FD383C5002080D7 /* Resources */,
 				BA472D0F1FD2F6A8007C77B4 /* Speech */,
 				9F49A6941FD2F39E002080D7 /* Service */,
 				9F49A68F1FD2F2F1002080D7 /* API */,
@@ -294,9 +308,11 @@
 				9F9CED241FD2E0FE0028261C /* LaunchScreen.storyboard in Resources */,
 				BA472D231FD32F4F007C77B4 /* SuggestionCell.xib in Resources */,
 				BA472D1B1FD3194F007C77B4 /* SlideCell.xib in Resources */,
+				9F49A6A81FD383D7002080D7 /* Vacations in Phuket.ttf in Resources */,
 				9F9CED211FD2E0FE0028261C /* Assets.xcassets in Resources */,
 				9F9CED1F1FD2E0FE0028261C /* Main.storyboard in Resources */,
 				BA472D151FD31675007C77B4 /* test.gif in Resources */,
+				9F49A6AA1FD383E1002080D7 /* MarkerFelt.ttc in Resources */,
 				9FD956F71FD2E60B0072535C /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -99,7 +99,11 @@ final class Bard: NSObject {
         let currentDate = Date()
         let secondsOfSilence = currentDate.timeIntervalSince(lastRecognizedDate)
         if (secondsOfSilence > TimeInterval(speechInterval) && candidateText != "") {
-            delegate?.didFinishStorytelling(text: candidateText)
+            var finalSentence = tokenizedSentence(candidateText)
+            if finalSentence.isEmpty {
+                finalSentence = candidateText
+            }
+            delegate?.didFinishStorytelling(text: finalSentence)
             candidateText = ""
             pauseRecording()
         }
@@ -123,7 +127,7 @@ final class Bard: NSObject {
 
     private func tokenizedSentence(_ sentence: String) -> String {
         let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .joinNames]
-        let schemes = NSLinguisticTagger.availableTagSchemes(forLanguage: "en")
+        let schemes = NSLinguisticTagger.availableTagSchemes(forLanguage: "pt")
         let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))
         tagger.string = sentence
 
@@ -133,7 +137,14 @@ final class Bard: NSObject {
             guard let tag = tag else { return }
             let token = (sentence as NSString).substring(with: tokenRange)
             switch tag {
-                case .noun, .verb, .adjective: expectedWords += " \(token)"
+                case .noun,
+                     .verb,
+                     .adjective,
+                     .number,
+                     .personalName,
+                     .organizationName,
+                     .placeName:
+                     expectedWords += " \(token)"
                 default: break;
             }
         }

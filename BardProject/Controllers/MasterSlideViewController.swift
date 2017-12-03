@@ -16,10 +16,10 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var overlayView: UIView!
     
     var slidesViewController: SlidesViewController!
+    var suggestionsViewController: SuggestionsViewController!
+
     let bard = Bard(with: 1.0, languageIdentifier: "pt_BR")
 
-    var suggestionsViewController: SuggestionsViewController!
-    
     @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var suggestionsTrailingConstraint: NSLayoutConstraint!
 
@@ -59,6 +59,9 @@ final class MasterSlideViewController: UIViewController {
                                 imgView.image = UIImage.gif(data: imageData)
                             } else {
                                 imgView.image = UIImage(data: imageData)
+                            }
+                            if let image = UIImage(data: imageData) {
+                                self?.slidesViewController.add(image)
                             }
                         }, completion: nil)
                     }

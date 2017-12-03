@@ -16,6 +16,7 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var slidesArrowView: UIView!
     @IBOutlet weak var slidesArrowImage: UIImageView!
+    @IBOutlet weak var suggestionsArrowImage: UIImageView!
     
     var slidesViewController: SlidesViewController!
     var suggestionsViewController: SuggestionsViewController!
@@ -120,10 +121,12 @@ final class MasterSlideViewController: UIViewController {
 
     @objc func showSuggestions() {
         shouldShowSuggestions(true)
+        suggestionsArrowImage.image = #imageLiteral(resourceName: "arrow-right")
     }
 
     @objc func hideSuggestions() {
         shouldShowSuggestions(false)
+        suggestionsArrowImage.image = #imageLiteral(resourceName: "arrow")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

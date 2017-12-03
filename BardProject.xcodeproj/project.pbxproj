@@ -30,7 +30,6 @@
 		9FD956F71FD2E60B0072535C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD956F61FD2E60B0072535C /* CategoryCell.xib */; };
 		9FD956FA1FD2E7B20072535C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD956F91FD2E7B20072535C /* Category.swift */; };
 		BA472D131FD31390007C77B4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D121FD31390007C77B4 /* UIImage+Extension.swift */; };
-		BA472D151FD31675007C77B4 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = BA472D141FD31674007C77B4 /* test.gif */; };
 		BA472D171FD3171D007C77B4 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D161FD3171D007C77B4 /* Segues.swift */; };
 		BA472D1A1FD3194F007C77B4 /* SlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA472D181FD3194F007C77B4 /* SlideCell.swift */; };
 		BA472D1B1FD3194F007C77B4 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA472D191FD3194F007C77B4 /* SlideCell.xib */; };
@@ -68,7 +67,6 @@
 		9FD956F61FD2E60B0072535C /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		9FD956F91FD2E7B20072535C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BA472D121FD31390007C77B4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		BA472D141FD31674007C77B4 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
 		BA472D161FD3171D007C77B4 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		BA472D181FD3194F007C77B4 /* SlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCell.swift; sourceTree = "<group>"; };
 		BA472D191FD3194F007C77B4 /* SlideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				9F9CED191FD2E0FE0028261C /* AppDelegate.swift */,
 				9F9CED1D1FD2E0FE0028261C /* Main.storyboard */,
 				9F9CED201FD2E0FE0028261C /* Assets.xcassets */,
-				BA472D141FD31674007C77B4 /* test.gif */,
 				9F9CED221FD2E0FE0028261C /* LaunchScreen.storyboard */,
 				9F9CED251FD2E0FE0028261C /* Info.plist */,
 			);
@@ -311,7 +308,6 @@
 				9F49A6A81FD383D7002080D7 /* Vacations in Phuket.ttf in Resources */,
 				9F9CED211FD2E0FE0028261C /* Assets.xcassets in Resources */,
 				9F9CED1F1FD2E0FE0028261C /* Main.storyboard in Resources */,
-				BA472D151FD31675007C77B4 /* test.gif in Resources */,
 				9F49A6AA1FD383E1002080D7 /* MarkerFelt.ttc in Resources */,
 				9FD956F71FD2E60B0072535C /* CategoryCell.xib in Resources */,
 			);

@@ -34,7 +34,7 @@ final class MasterSlideViewController: UIViewController {
     }
 
     private func requestImage(with text: String) {
-        let request = MediaServiceRequest(text: text, animated: false, categoryId: 1, realData: true)
+        let request = MediaServiceRequest(text: text, animated: true, categoryId: 1, realData: true)
         MediaService.getMedia(request: request) { response in
             switch response.result {
             case .success:
@@ -44,7 +44,11 @@ final class MasterSlideViewController: UIViewController {
                     self?.startBardRecording()
                     if let imgView = self?.imgToShow, let imageData = resultData.data {
                         UIView.transition(with: imgView, duration: 0.8, options: .transitionCurlUp, animations: {
-                            imgView.image = UIImage(data: imageData)
+                            if media.animated {
+                                imgView.image = UIImage.gif(data: imageData)
+                            } else {
+                                imgView.image = UIImage(data: imageData)
+                            }
                         }, completion: nil)
                     }
                 })

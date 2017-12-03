@@ -10,8 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Bodoni72-OldStyle.ttc">
-            <string>BodoniSvtyTwoOSITCTT-Book</string>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+        <array key="MarkerFeltWide.ttf">
+            <string>MarkerFelt-Wide</string>
         </array>
     </customFonts>
     <scenes>
@@ -23,21 +26,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4ic-pQ-XLP">
-                                <rect key="frame" x="84" y="297" width="857" height="471"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-categories" translatesAutoresizingMaskIntoConstraints="NO" id="kSm-vV-eaN">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4ic-pQ-XLP">
+                                <rect key="frame" x="141" y="253" width="742" height="515"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BXH-58-Y1G">
-                                    <size key="itemSize" width="160" height="210"/>
+                                    <size key="itemSize" width="200" height="290"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="30" minY="20" maxX="30" maxY="20"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="Yca-w0-ehl" customClass="CategoryCell" customModule="BardProject" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="20" width="160" height="210"/>
+                                        <rect key="frame" x="20" y="20" width="200" height="290"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
@@ -47,25 +55,53 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1sT-D9-dGk"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual história contaremos hoje?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mka-z7-xcW">
-                                <rect key="frame" x="33" y="144" width="699.5" height="73"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forma2" translatesAutoresizingMaskIntoConstraints="NO" id="G5G-66-p5W">
+                                <rect key="frame" x="-133" y="525" width="182" height="270"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="fAa-nO-33a"/>
+                                    <constraint firstAttribute="height" constant="270" id="fwa-Ds-FOh"/>
+                                    <constraint firstAttribute="width" constant="182" id="han-6g-kUA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="60"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forma2" translatesAutoresizingMaskIntoConstraints="NO" id="zp4-7L-APK">
+                                <rect key="frame" x="-41" y="498" width="182" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="7jz-tX-XCK"/>
+                                    <constraint firstAttribute="width" constant="182" id="xOB-9L-LQ2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qual história contaremos hoje?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mka-z7-xcW">
+                                <rect key="frame" x="153" y="179" width="700" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bard" translatesAutoresizingMaskIntoConstraints="NO" id="Muq-Tn-lWm">
+                                <rect key="frame" x="20" y="40" width="43" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERA UMA VEZ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwK-v4-0Or">
+                                <rect key="frame" x="63" y="62" width="86.5" height="14.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="0.90980392160000001" green="0.82352941180000006" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="forma1" translatesAutoresizingMaskIntoConstraints="NO" id="RQG-vx-7BA">
+                                <rect key="frame" x="842" y="0.0" width="182" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="forma1" translatesAutoresizingMaskIntoConstraints="NO" id="CDj-Pu-tMm">
+                                <rect key="frame" x="974" y="-25" width="182" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.30196078430000001" green="0.1960784314" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Mka-z7-xcW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="5uB-A3-lc3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ic-pQ-XLP" secondAttribute="trailing" constant="83" id="AR9-uc-DX5"/>
-                            <constraint firstItem="Mka-z7-xcW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="Gk8-vn-YGa"/>
-                            <constraint firstItem="4ic-pQ-XLP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IU1-qW-JLc"/>
-                            <constraint firstItem="4ic-pQ-XLP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="Zne-V2-aMQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mka-z7-xcW" secondAttribute="trailing" constant="291.5" id="cFw-r5-h1s"/>
-                            <constraint firstItem="4ic-pQ-XLP" firstAttribute="top" secondItem="Mka-z7-xcW" secondAttribute="bottom" constant="80" id="pvb-l8-ZPG"/>
+                            <constraint firstAttribute="bottom" secondItem="zp4-7L-APK" secondAttribute="bottom" id="HBb-iT-jx5"/>
+                            <constraint firstAttribute="bottom" secondItem="G5G-66-p5W" secondAttribute="bottom" constant="-27" id="LPO-OX-roO"/>
+                            <constraint firstItem="G5G-66-p5W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-133" id="S1c-MI-9d2"/>
+                            <constraint firstItem="zp4-7L-APK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-41" id="uFs-65-Hnt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -88,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sa8-sr-UPj">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-9f-4FT" userLabel="Slides Container View">
                                 <rect key="frame" x="0.0" y="768" width="1024" height="80"/>
@@ -101,7 +137,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOg-bx-03i" userLabel="Suggestions Container View">
-                                <rect key="frame" x="1024" y="64" width="120" height="704"/>
+                                <rect key="frame" x="1024" y="20" width="120" height="748"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="B00-bb-yPi"/>
@@ -111,7 +147,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhL-2e-TXb">
-                                <rect key="frame" x="20" y="89" width="36" height="36"/>
+                                <rect key="frame" x="20" y="45" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="9IF-gH-YTF"/>
                                     <constraint firstAttribute="width" constant="36" id="RYn-SU-Za6"/>
@@ -153,10 +189,9 @@
         <!--Navigation Controller-->
         <scene sceneID="onu-Ee-W6m">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mas-gj-yDm" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mas-gj-yDm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L8L-w4-mNt">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
@@ -230,11 +265,11 @@
             <objects>
                 <viewController id="Km3-bp-zLt" customClass="SuggestionsViewController" customModule="BardProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fAe-1L-HOo">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uj4-E5-rB9">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="748"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69762323940000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eQf-Ld-oNr">
                                     <size key="itemSize" width="100" height="100"/>
@@ -277,6 +312,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background-categories" width="1152" height="768"/>
+        <image name="bard" width="50" height="60"/>
+        <image name="forma1" width="404" height="376"/>
+        <image name="forma2" width="337" height="462"/>
         <image name="record-button" width="36" height="36"/>
     </resources>
 </document>

@@ -42,6 +42,6 @@ class CategoryCell: UICollectionViewCell {
 
     func populate(with category: Category) {
         categoryTitle.text = category.title.uppercased()
-        categoryImage.backgroundColor = .purple
+        categoryImage.af_setImage(withURL: category.imageUrl)
     }
 }

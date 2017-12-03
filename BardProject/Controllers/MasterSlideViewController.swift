@@ -30,7 +30,7 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var suggestionsTrailingConstraint: NSLayoutConstraint!
     var slidesViewController: SlidesViewController!
     var suggestionsViewController: SuggestionsViewController!
-    let bard = Bard(with: 0.8, languageIdentifier: "pt_BR")
+    let bard = Bard(with: 1, languageIdentifier: "pt_BR")
     var category: Category?
     let wkController = WKUserContentController()
 
@@ -57,6 +57,10 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
         txtSpeech.layer.cornerRadius = 10.0
     }
 
+    @IBAction func animatedToggleChanged(_ sender: Any) {
+        bard.shouldPause = animatedSwitch.isOn
+    }
+
     private func requestImage(with text: String) {
         guard let category = category else { return }
         let request = MediaServiceRequest(text: text, animated: animatedSwitch.isOn, categoryId: category.id, realData: true)
@@ -68,7 +72,6 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
                     self.restartBard()
                     return
                 }
-
                 if self.drawingSwitch.isOn {
                     self.displayDrawing(candidateURL: img)
                 } else {
@@ -92,7 +95,7 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
                         }
                     })
                 }
-            case .error(message: let error):
+            case .error(message: _):
                 self.restartBard()
             }
         }

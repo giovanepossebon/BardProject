@@ -26,7 +26,7 @@ final class Bard: NSObject {
     private var speechInterval: TimeInterval = 2
     private let audioEngine = AVAudioEngine()
     private var speechRecognizer: SFSpeechRecognizer?
-    private let request = SFSpeechAudioBufferRecognitionRequest()
+    private var request = SFSpeechAudioBufferRecognitionRequest()
     private var recognitionTask: SFSpeechRecognitionTask?
     private var lastRecognizedDate = Date()
     private var speechTimer: Timer!
@@ -37,6 +37,8 @@ final class Bard: NSObject {
         }
     }
 
+    var shouldPause = true
+
     init(with speechInterval: TimeInterval, languageIdentifier: String) {
         self.speechInterval = speechInterval
         self.languageIdentifier = languageIdentifier
@@ -45,6 +47,7 @@ final class Bard: NSObject {
     }
 
     private func setupAudioEngine() {
+        request = SFSpeechAudioBufferRecognitionRequest()
         audioEngine.inputNode.removeTap(onBus: 0)
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
@@ -76,12 +79,13 @@ final class Bard: NSObject {
 
     func startRecording() throws {
         setupAudioEngine()
-        audioEngine.prepare()
-        try audioEngine.start()
+        if !audioEngine.isRunning {
+            audioEngine.prepare()
+            try audioEngine.start()
+        }
 
         startSpeechTimer()
         delegate?.didStartRecording()
-
         recognitionTask = speechRecognizer?.recognitionTask(with: request) { [weak self] result, error in
             if let result = result {
                 let resultText = result.bestTranscription.formattedString.lowercased()
@@ -106,7 +110,9 @@ final class Bard: NSObject {
             }
             delegate?.didFinishStorytelling(text: finalSentence)
             candidateText = ""
-            pauseRecording()
+            if shouldPause {
+                pauseRecording()
+            }
         }
     }
 
@@ -128,29 +134,29 @@ final class Bard: NSObject {
 
     private func tokenizedSentence(_ sentence: String) -> String {
         return sentence
-        let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .joinNames]
-        let schemes = NSLinguisticTagger.availableTagSchemes(forLanguage: "pt")
-        let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))
-        tagger.string = sentence
-
-        var expectedWords = ""
-        let range = NSMakeRange(0, sentence.count)
-        tagger.enumerateTags(in: range, scheme: .nameTypeOrLexicalClass, options: options) { (tag, tokenRange, _, _) in
-            guard let tag = tag else { return }
-            let token = (sentence as NSString).substring(with: tokenRange)
-            switch tag {
-                case .noun,
-                     .verb,
-                     .adjective,
-                     .number,
-                     .personalName,
-                     .organizationName,
-                     .placeName:
-                     expectedWords += " \(token)"
-                default: break;
-            }
-        }
-        return expectedWords
+//        let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .joinNames]
+//        let schemes = NSLinguisticTagger.availableTagSchemes(forLanguage: "pt")
+//        let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))
+//        tagger.string = sentence
+//
+//        var expectedWords = ""
+//        let range = NSMakeRange(0, sentence.count)
+//        tagger.enumerateTags(in: range, scheme: .nameTypeOrLexicalClass, options: options) { (tag, tokenRange, _, _) in
+//            guard let tag = tag else { return }
+//            let token = (sentence as NSString).substring(with: tokenRange)
+//            switch tag {
+//                case .noun,
+//                     .verb,
+//                     .adjective,
+//                     .number,
+//                     .personalName,
+//                     .organizationName,
+//                     .placeName:
+//                     expectedWords += " \(token)"
+//                default: break;
+//            }
+//        }
+//        return expectedWords
     }
 }
 

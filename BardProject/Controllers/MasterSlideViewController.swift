@@ -14,6 +14,7 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var buttonRecord: UIButton!
     @IBOutlet weak var buttonPlay: UIButton!
     @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var theEndView: UIView!
     @IBOutlet weak var slidesArrowView: UIView!
     @IBOutlet weak var slidesArrowImage: UIImageView!
     @IBOutlet weak var suggestionsArrowImage: UIImageView!
@@ -142,9 +143,16 @@ final class MasterSlideViewController: UIViewController {
     @IBAction func didTouchToggleRecording(_ sender: Any) {
         if bard.isListening {
             bard.stopRecognition()
+            showTheEndView()
         } else {
             startBardRecording()
             hideOverlay()
+        }
+    }
+
+    private func showTheEndView() {
+        UIView.animate(withDuration: 0.5) {
+            self.theEndView.alpha = 1
         }
     }
 

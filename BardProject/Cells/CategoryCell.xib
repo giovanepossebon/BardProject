@@ -24,8 +24,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="290"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terror" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-Go-o61">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-Go-o61">
                         <rect key="frame" x="0.0" y="31" width="200" height="259"/>
+                        <color key="backgroundColor" red="0.33725490200000002" green="0.63529411759999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="259" id="op6-IF-nhp"/>
                         </constraints>
@@ -57,7 +58,4 @@
             <point key="canvasLocation" x="13" y="131.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="terror" width="176" height="229"/>
-    </resources>
 </document>

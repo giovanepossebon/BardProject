@@ -14,13 +14,17 @@ final class MasterSlideViewController: UIViewController {
     @IBOutlet weak var buttonRecord: UIButton!
     @IBOutlet weak var buttonPlay: UIButton!
     @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var theEndView: UIView!
+    @IBOutlet weak var slidesArrowView: UIView!
+    @IBOutlet weak var slidesArrowImage: UIImageView!
+    @IBOutlet weak var suggestionsArrowImage: UIImageView!
     
     var slidesViewController: SlidesViewController!
-    let bard = Bard(with: 1.0, languageIdentifier: "pt_BR")
-
-    var category: Category?
     var suggestionsViewController: SuggestionsViewController!
-    
+
+    let bard = Bard(with: 1.0, languageIdentifier: "pt_BR")
+    var category: Category?
+
     @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var suggestionsTrailingConstraint: NSLayoutConstraint!
 
@@ -43,6 +47,7 @@ final class MasterSlideViewController: UIViewController {
 
     private func setupPlayButtonUI() {
         buttonPlay.layer.cornerRadius = 10.0
+        slidesArrowView.layer.cornerRadius = slidesArrowView.frame.width / 2
     }
 
     private func requestImage(with text: String) {
@@ -62,6 +67,9 @@ final class MasterSlideViewController: UIViewController {
                                 imgView.image = UIImage.gif(data: imageData)
                             } else {
                                 imgView.image = UIImage(data: imageData)
+                            }
+                            if let image = UIImage(data: imageData) {
+                                self?.slidesViewController.add(image)
                             }
                         }, completion: nil)
                     }
@@ -107,18 +115,22 @@ final class MasterSlideViewController: UIViewController {
 
     @objc func showHistory() {
         shouldShowHistory(true)
+        slidesArrowImage.image = #imageLiteral(resourceName: "arrow-down")
     }
 
     @objc func hideHistory() {
         shouldShowHistory(false)
+        slidesArrowImage.image = #imageLiteral(resourceName: "arrow-up")
     }
 
     @objc func showSuggestions() {
         shouldShowSuggestions(true)
+        suggestionsArrowImage.image = #imageLiteral(resourceName: "arrow-right")
     }
 
     @objc func hideSuggestions() {
         shouldShowSuggestions(false)
+        suggestionsArrowImage.image = #imageLiteral(resourceName: "arrow")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -134,9 +146,16 @@ final class MasterSlideViewController: UIViewController {
     @IBAction func didTouchToggleRecording(_ sender: Any) {
         if bard.isListening {
             bard.stopRecognition()
+            showTheEndView()
         } else {
             startBardRecording()
             hideOverlay()
+        }
+    }
+
+    private func showTheEndView() {
+        UIView.animate(withDuration: 0.5) {
+            self.theEndView.alpha = 1
         }
     }
 

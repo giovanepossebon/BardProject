@@ -24,19 +24,17 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var txtSpeech: UITextView!
-    
+    @IBOutlet weak var lblGIF: UILabel!
+    @IBOutlet weak var lblDrawing: UILabel!
+    @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var suggestionsTrailingConstraint: NSLayoutConstraint!
     var slidesViewController: SlidesViewController!
     var suggestionsViewController: SuggestionsViewController!
-
     let bard = Bard(with: 0.8, languageIdentifier: "pt_BR")
     var category: Category?
 
-    @IBOutlet weak var slidesContainerBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var suggestionsTrailingConstraint: NSLayoutConstraint!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         bard.delegate = self
         webView.navigationDelegate = self
         setupGestures()
@@ -218,6 +216,10 @@ final class MasterSlideViewController: UIViewController, WKNavigationDelegate {
     private func hideOverlay() {
         UIView.animate(withDuration: 0.5) {
             self.overlayView.alpha = 0
+            self.lblGIF.isHidden = false
+            self.lblDrawing.isHidden = false
+            self.drawingSwitch.isHidden = false
+            self.animatedSwitch.isHidden = false
         }
     }
 
